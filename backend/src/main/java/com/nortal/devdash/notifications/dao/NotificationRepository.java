@@ -1,4 +1,4 @@
-package com.nortal.devdash.notification;
+package com.nortal.devdash.notifications.dao;
 
 import org.springframework.data.repository.CrudRepository;
 
