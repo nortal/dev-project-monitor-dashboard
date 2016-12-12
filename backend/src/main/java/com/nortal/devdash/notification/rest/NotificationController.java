@@ -19,7 +19,6 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping("/api/notification")
 @ApiModel(value = "Notifications")
 public class NotificationController {
-
     @Autowired
     private NotificationInteractor notificationInteractor;
 

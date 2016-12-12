@@ -10,7 +10,6 @@ import com.nortal.devdash.notification.service.NotificationService;
 
 @Component
 public class NotificationInteractor {
-
     @Autowired
     private NotificationService notificationService;
 
