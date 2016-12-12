@@ -1,4 +1,4 @@
-package com.nortal.devdash.ping.dao;
+package com.nortal.devdash.ping;
 
 import java.util.List;
 

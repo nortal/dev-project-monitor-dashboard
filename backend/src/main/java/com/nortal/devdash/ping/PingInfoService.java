@@ -1,4 +1,4 @@
-package com.nortal.devdash.ping.service;
+package com.nortal.devdash.ping;
 
 import java.util.List;
 

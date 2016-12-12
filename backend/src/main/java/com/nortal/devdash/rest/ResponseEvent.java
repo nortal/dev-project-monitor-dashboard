@@ -1,4 +1,4 @@
-package com.nortal.devdash.common.rest;
+package com.nortal.devdash.rest;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -88,7 +88,7 @@ public class ResponseEvent<T> {
      * 
      * @param entity
      */
-    public static <T> ResponseEvent<T> create(T entity) {
+    public static <T> ResponseEvent<T> of(T entity) {
         return new ResponseEvent<T>(entity);
     }
 

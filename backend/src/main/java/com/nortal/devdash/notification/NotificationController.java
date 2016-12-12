@@ -1,4 +1,4 @@
-package com.nortal.devdash.ping.rest;
+package com.nortal.devdash.notification;
 
 import java.util.List;
 
@@ -9,28 +9,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nortal.devdash.common.rest.ResponseEvent;
-import com.nortal.devdash.ping.model.PingInfo;
+import com.nortal.devdash.notification.model.Notification;
+import com.nortal.devdash.rest.ResponseEvent;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@RequestMapping("/api/ping")
-@ApiModel(value = "Ping operations")
-public class PingController {
-
+@RequestMapping("notification")
+@ApiModel(value = "Notifications")
+public class NotificationController {
     @Autowired
-    private PingInteractor pingInteractor;
+    private NotificationUseCase notificationInteractor;
 
     @RequestMapping(method = RequestMethod.GET)
     @ApiOperation(
-            value = "Returns ping result list",
+            value = "Returns notification list",
             httpMethod = "GET",
             produces = MediaType.APPLICATION_JSON_VALUE,
-            response = PingInfo.class)
-    public ResponseEntity<List<PingInfo>> getNotifications() {
-        return ResponseEvent.create(pingInteractor.getPingResult()).requiredResponse();
+            response = Notification.class)
+    public ResponseEntity<List<Notification>> getNotifications() {
+        return ResponseEvent.of(notificationInteractor.getNotifications()).requiredResponse();
     }
-
 }

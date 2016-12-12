@@ -1,4 +1,4 @@
-package com.nortal.devdash.notification.rest;
+package com.nortal.devdash.notification;
 
 import java.util.List;
 
@@ -6,10 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.nortal.devdash.notification.model.Notification;
-import com.nortal.devdash.notification.service.NotificationService;
+
+/*
+ * Using UseCase abstraction is more clear than Interactor in object-oriented world.
+ */
 
 @Component
-public class NotificationInteractor {
+class NotificationUseCase {
     @Autowired
     private NotificationService notificationService;
 

@@ -18,17 +18,11 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'rebel'
+apply plugin: 'jacoco'
 
 jar {
 	baseName = 'dev-dashboard'
 	version = '0.0.1-SNAPSHOT'
-}
-jar.dependsOn(generateRebel)
-
-if (System.env.REBEL_HOME) {
-	bootRun {
-		jvmArgs = ["-agentpath:${System.env.REBEL_HOME}/lib/jrebel64.dll"]
-	}
 }
 
 sourceCompatibility = 1.8
@@ -51,3 +45,12 @@ dependencies {
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
 }
+
+if (System.env.REBEL_HOME) {
+	bootRun {
+		jvmArgs = ["-agentpath:${System.env.REBEL_HOME}/lib/jrebel64.dll"]
+	}
+}
+
+jar.dependsOn(generateRebel)
+test.finalizedBy(jacocoTestReport)

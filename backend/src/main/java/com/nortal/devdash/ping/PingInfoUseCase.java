@@ -1,4 +1,4 @@
-package com.nortal.devdash.ping.rest;
+package com.nortal.devdash.ping;
 
 import java.util.List;
 
@@ -6,11 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.nortal.devdash.ping.model.PingInfo;
-import com.nortal.devdash.ping.service.PingInfoService;
 
 @Component
-public class PingInteractor {
-
+class PingInfoUseCase {
     @Autowired
     private PingInfoService pingInfoService;
 

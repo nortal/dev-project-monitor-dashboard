@@ -1,4 +1,4 @@
-package com.nortal.devdash.notification.service;
+package com.nortal.devdash.notification;
 
 import java.util.List;
 
