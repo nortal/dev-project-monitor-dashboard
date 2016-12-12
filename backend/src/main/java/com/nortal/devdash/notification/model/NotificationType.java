@@ -1,4 +1,4 @@
-package com.nortal.devdash.notifications.model;
+package com.nortal.devdash.notification.model;
 
 import io.swagger.annotations.ApiModel;
 

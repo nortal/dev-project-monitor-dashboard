@@ -1,4 +1,4 @@
-package com.nortal.devdash.notifications.model;
+package com.nortal.devdash.notification.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

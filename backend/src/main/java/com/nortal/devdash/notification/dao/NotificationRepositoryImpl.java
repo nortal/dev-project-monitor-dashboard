@@ -1,4 +1,4 @@
-package com.nortal.devdash.notifications.dao;
+package com.nortal.devdash.notification.dao;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.List;
 import org.apache.commons.lang3.RandomUtils;
 import org.springframework.stereotype.Repository;
 
-import com.nortal.devdash.notifications.model.Notification;
-import com.nortal.devdash.notifications.model.NotificationType;
+import com.nortal.devdash.notification.model.Notification;
+import com.nortal.devdash.notification.model.NotificationType;
 
 @Repository
 public class NotificationRepositoryImpl implements NotificationRepository {

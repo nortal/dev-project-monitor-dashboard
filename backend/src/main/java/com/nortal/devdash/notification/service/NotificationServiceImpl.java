@@ -1,4 +1,4 @@
-package com.nortal.devdash.notifications.service;
+package com.nortal.devdash.notification.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -7,8 +7,8 @@ import java.util.stream.StreamSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nortal.devdash.notifications.dao.NotificationRepository;
-import com.nortal.devdash.notifications.model.Notification;
+import com.nortal.devdash.notification.dao.NotificationRepository;
+import com.nortal.devdash.notification.model.Notification;
 
 @Service
 public class NotificationServiceImpl implements NotificationService {

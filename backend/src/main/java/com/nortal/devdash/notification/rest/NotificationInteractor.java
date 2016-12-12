@@ -1,12 +1,12 @@
-package com.nortal.devdash.notifications.rest;
+package com.nortal.devdash.notification.rest;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.nortal.devdash.notifications.model.Notification;
-import com.nortal.devdash.notifications.service.NotificationService;
+import com.nortal.devdash.notification.model.Notification;
+import com.nortal.devdash.notification.service.NotificationService;
 
 @Component
 public class NotificationInteractor {

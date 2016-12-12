@@ -1,4 +1,4 @@
-package com.nortal.devdash.notifications.rest;
+package com.nortal.devdash.notification.rest;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nortal.devdash.common.rest.ResponseEvent;
-import com.nortal.devdash.notifications.model.Notification;
+import com.nortal.devdash.notification.model.Notification;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
