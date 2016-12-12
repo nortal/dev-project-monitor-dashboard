@@ -1,7 +1,8 @@
 # Frontend
 
-# Prerequisites
-node ver >= 5.0; npm ver >= 3.0
+## Prerequisites
+node ver >= 5.0
+npm ver >= 3.0
 
-# Running
+## Running
 npm run start

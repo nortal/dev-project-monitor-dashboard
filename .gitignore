@@ -29,3 +29,6 @@ frontend/scss/.tmp/
 frontend/js/lib/
 frontend/typings/
 frontend/coverage/
+
+### JRebel ###
+rebel.xml
