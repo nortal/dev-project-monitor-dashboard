@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiOperation;
 @ApiModel(value = "Notifications")
 public class NotificationController {
     @Autowired
-    private NotificationUseCase notificationInteractor;
+    private NotificationUseCase notificationUseCase;
 
     @RequestMapping(method = RequestMethod.GET)
     @ApiOperation(
@@ -29,6 +29,6 @@ public class NotificationController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             response = Notification.class)
     public ResponseEntity<List<Notification>> getNotifications() {
-        return ResponseEvent.of(notificationInteractor.getNotifications()).requiredResponse();
+        return ResponseEvent.of(notificationUseCase.getNotifications()).requiredResponse();
     }
 }
