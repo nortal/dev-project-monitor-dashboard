@@ -31,7 +31,7 @@ public class NotificationServiceTests {
     }
 
     @Test
-    public void willReturnNotificationsIfPresent() {
+    public void returnsNotificationsIfPresent() {
         notificationRepository.save(notification("Notification", NotificationType.MESSAGE));
         List<Notification> notifications = notificationService.getAll();
         assertThat(notifications).isNotEmpty();

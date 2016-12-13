@@ -23,8 +23,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import com.nortal.devdash.notification.model.Notification;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(NotificationController.class)
-public class NotificationControllerTests {
+@WebMvcTest(NotificationEndpoint.class)
+public class NotificationEndpointTests {
 
     /*
      * Loading partial Spring context to test something, kind of bad

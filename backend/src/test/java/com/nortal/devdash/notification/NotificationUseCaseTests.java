@@ -29,9 +29,10 @@ public class NotificationUseCaseTests {
     private NotificationService notificationService;
 
     @Test
-    public void willReturnNotificationsIfPresent() {
+    public void returnsNotificationsIfPresent() {
+        Notification existing = notification(Long.valueOf(1L), "Notification", NotificationType.WARNING);
         given(notificationService.getAll())
-                .willReturn(Arrays.asList(notification(Long.valueOf(1L), "Notification", NotificationType.WARNING)));
+                .willReturn(Arrays.asList(existing));
 
         List<Notification> notifications = notificationUseCase.getNotifications();
         assertThat(notifications).isNotEmpty();
@@ -40,6 +41,8 @@ public class NotificationUseCaseTests {
         assertThat(notification.getId()).isEqualTo(Long.valueOf(1L));
         assertThat(notification.getText()).isEqualTo("Notification");
         assertThat(notification.getType()).isEqualTo(NotificationType.WARNING);
+        assertThat(existing.hashCode()).isEqualTo(notification.hashCode());
+        assertThat(existing.equals(notification)).isTrue();
 
         verify(notificationService).getAll();
     }

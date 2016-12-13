@@ -18,9 +18,9 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("ping")
 @ApiModel(value = "Ping operations")
-public class PingInfoController {
+public class PingInfoEndpoint {
     @Autowired
-    private PingInfoUseCase pingInteractor;
+    private PingInfoUseCase pingInfoUseCase;
 
     @RequestMapping(method = RequestMethod.GET)
     @ApiOperation(
@@ -29,7 +29,7 @@ public class PingInfoController {
             produces = MediaType.APPLICATION_JSON_VALUE,
             response = PingInfo.class)
     public ResponseEntity<List<PingInfo>> getPingInfos() {
-        return ResponseEvent.of(pingInteractor.getPingResult()).requiredResponse();
+        return ResponseEvent.of(pingInfoUseCase.getPingResult()).requiredResponse();
     }
 
 }

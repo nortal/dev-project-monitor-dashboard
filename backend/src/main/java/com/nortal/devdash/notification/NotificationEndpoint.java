@@ -18,7 +18,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("notification")
 @ApiModel(value = "Notifications")
-public class NotificationController {
+public class NotificationEndpoint {
     @Autowired
     private NotificationUseCase notificationUseCase;
 
