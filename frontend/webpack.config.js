@@ -16,8 +16,7 @@ var ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
  * Get npm lifecycle event to identify the environment
  */
 var ENV = process.env.npm_lifecycle_event;
-var isTestWatch = ENV === 'test-watch';
-var isTest = ENV === 'test' || isTestWatch;
+var isTest = ENV === 'test';
 var isProd = ENV === 'build';
 
 module.exports = function makeWebpackConfig() {
@@ -35,11 +34,9 @@ module.exports = function makeWebpackConfig() {
      */
     if (isProd) {
         config.devtool = 'source-map';
-    }
-    else if (isTest) {
+    } else if (isTest) {
         config.devtool = 'inline-source-map';
-    }
-    else {
+    } else {
         config.devtool = 'eval-source-map';
     }
 
@@ -74,7 +71,7 @@ module.exports = function makeWebpackConfig() {
     };
 
     var atlOptions = '';
-    if (isTest && !isTestWatch) {
+    if (isTest) {
         // awesome-typescript-loader needs to output inlineSourceMap for code coverage to work with source maps.
         atlOptions = 'inlineSourceMap=true&sourceMap=false';
     }
@@ -138,7 +135,7 @@ module.exports = function makeWebpackConfig() {
         ]
     };
 
-    if (isTest && !isTestWatch) {
+    if (isTest) {
         // instrument only testing sources with Istanbul, covers ts files
         config.module.rules.push({
             test: /\.ts$/,
@@ -149,7 +146,7 @@ module.exports = function makeWebpackConfig() {
         });
     }
 
-    if (!isTest || !isTestWatch) {
+    if (!isTest) {
         // tslint support
         config.module.rules.push({
             test: /\.ts$/,
@@ -223,7 +220,7 @@ module.exports = function makeWebpackConfig() {
         config.plugins.push(new DashboardPlugin());
     }
 
-    if (!isTest && !isTestWatch) {
+    if (!isTest) {
         config.plugins.push(
             new ForkCheckerPlugin(),
 
