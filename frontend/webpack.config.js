@@ -276,8 +276,20 @@ module.exports = function makeWebpackConfig() {
     config.devServer = {
         contentBase: './src/public',
         historyApiFallback: true,
-        quiet: true,
-        stats: 'minimal' // none (or false), errors-only, minimal, normal (or true) and verbose
+        quiet: false,
+        stats: 'minimal', // none (or false), errors-only, minimal, normal (or true) and verbose
+        proxy: {
+            "/api/**": {
+                target: {
+                    "host": "localhost",
+                    "protocol": 'http:',
+                    "port": 8090
+                },
+                ignorePath: true,
+                changeOrigin: true,
+                secure: false
+            }
+        }
     };
 
     return config;
