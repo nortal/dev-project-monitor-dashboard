@@ -50,3 +50,7 @@ check.dependsOn(npm_run_test)
 // run all task
 task runAll{}
 runAll.dependsOn(npm_run_start)
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.5'
+}

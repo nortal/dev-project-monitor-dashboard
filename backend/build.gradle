@@ -53,5 +53,9 @@ if (System.env.REBEL_HOME) {
 	}
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.5'
+}
+
 jar.dependsOn(generateRebel)
 test.finalizedBy(jacocoTestReport)
